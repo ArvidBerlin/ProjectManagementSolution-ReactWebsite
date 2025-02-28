@@ -12,7 +12,6 @@ export const ProjectProvider = ({children}) => {
     const getProjects = async () => {
         const res = await fetch(`${apiUri}`)
         const data = await res.json()
-        console.log(data);
         
         setProjects(data)
     }
