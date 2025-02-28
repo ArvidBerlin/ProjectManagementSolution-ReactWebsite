@@ -171,7 +171,7 @@ const CreateProjectForm = () => {
                 </select>
             </div>
 
-            <button type='submit'>Create Project</button>
+            <button type='submit' className='btn btn-gray'>Create Project</button>
 
         </form>
     </div>
