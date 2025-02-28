@@ -4,9 +4,6 @@ import { useNavigate } from 'react-router-dom'
 const ProjectListItem = ({project}) => {
     const navigate = useNavigate();
 
-console.log(project);
-
-
   return (
     <tr onClick={() => navigate(`/projects/${project.id}`)}>
         <td>{project.id}</td>
