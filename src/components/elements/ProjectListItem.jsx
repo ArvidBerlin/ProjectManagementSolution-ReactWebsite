@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom'
 const ProjectListItem = ({project}) => {
     const navigate = useNavigate();
 
+console.log(project);
+
+
   return (
     <tr onClick={() => navigate(`/projects/${project.id}`)}>
         <td>{project.id}</td>
@@ -11,8 +14,8 @@ const ProjectListItem = ({project}) => {
         <td>{project.description}</td>
         <td>{project.startDate}</td>
         <td>{project.endDate}</td>
-        <td>{project.Status.statusName}</td>
-        <td>{project.ProjectManager.Employee.displayName}</td>
+        <td>{project.status.statusName}</td>
+        <td>{project.projectManager.employee.displayName}</td>
     </tr>
   )
 }
