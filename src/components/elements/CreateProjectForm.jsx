@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const CreateProjectForm = () => {
     const [projectName, setProjectName] = useState('')
@@ -51,6 +52,8 @@ const CreateProjectForm = () => {
         setProjectTypes(data)
     }
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -73,6 +76,12 @@ const CreateProjectForm = () => {
             },
             body: JSON.stringify(formData)
         })
+
+        if (res.ok) {
+            navigate('/projects');
+        } else {
+            console.error('Failed to create project')
+        }
 
         console.log(res)
     }
@@ -171,7 +180,7 @@ const CreateProjectForm = () => {
                 </select>
             </div>
 
-            <button type='submit' className='btn btn-gray'>Create Project</button>
+            <button type='submit' id='create-button' className='btn btn-gray'>Create Project</button>
 
         </form>
     </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const UpdateProjectForm = () => {
         const [projectId] = useState('0')
@@ -51,6 +52,8 @@ const UpdateProjectForm = () => {
     
             setProjectTypes(data)
         }
+
+        const navigate = useNavigate();
     
         const handleSubmit = async (e) => {
             e.preventDefault()
@@ -75,6 +78,12 @@ const UpdateProjectForm = () => {
                 },
                 body: JSON.stringify(formData)
             })
+
+            if (res.ok) {
+                navigate('/projects');
+            } else {
+                console.error('Failed to update project')
+            }
 
             console.log(res)
         }
@@ -174,7 +183,7 @@ const UpdateProjectForm = () => {
                 </select>
             </div>
 
-            <button type='submit' className='btn btn-gray'>Update Project</button>
+            <button type='submit' id='update-button' className='btn btn-gray'>Update Project</button>
 
         </form>
     </div>
