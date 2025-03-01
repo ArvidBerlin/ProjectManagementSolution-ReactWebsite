@@ -4,6 +4,7 @@ import HomePage from '../../pages/HomePage'
 import Projects from '../../pages/Projects'
 import Project from '../../pages/Project'
 import CreateProject from '../../pages/CreateProject'
+import UpdateProject from '../../pages/UpdateProject'
 
 const Main = () => {
   return (
@@ -12,6 +13,7 @@ const Main = () => {
       <Route path="/projects" element={<Projects />} />
       <Route path="/projects/:id" element={<Project />} />
       <Route path="/projects/create" element={<CreateProject />} />
+      <Route path="/projects/update" element={<UpdateProject />} />
     </Routes>
   )
 }
