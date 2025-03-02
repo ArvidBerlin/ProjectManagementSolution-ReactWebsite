@@ -30,6 +30,7 @@ const Project = () => {
                     <p><strong>Customer:</strong> {project.customer?.customerName || "No customer assigned"}</p>
                     <p><strong>Project Manager:</strong> {project.projectManager?.employee?.displayName || "No manager assigned"}</p>
                     <p><strong>Service:</strong> {project.service?.serviceName || "No service specified"}</p>
+                    <p><strong>Service Price:</strong> {project.service?.pricePerHour || "No service price specified"}</p>
                     <p><strong>Project Type:</strong> {project.projectType?.typeName || "No type specified"}</p>
                 </div>
 

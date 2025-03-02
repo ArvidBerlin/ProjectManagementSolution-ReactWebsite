@@ -174,6 +174,16 @@ const UpdateProjectForm = () => {
             </div>
 
             <div className='form-group'>
+                <label htmlFor="serviceprice">Service Price: </label>
+                <select name='serviceprice' id='serviceprice' defaultValue={serviceId} onChange={(e) => setServiceId(e.target.value)}>
+                  <option disabled hidden value="0">Set Service Price</option>
+                  {
+                    services.map(service => (<option key={service.id} value={service.id}>{service.pricePerHour}</option>))
+                  }
+                </select>
+            </div>
+
+            <div className='form-group'>
                 <label htmlFor="projecttype">Project Type: </label>
                 <select name='projecttype' id='projecttype' defaultValue={projectTypeId} onChange={(e) => setProjectTypeId(e.target.value)}>
                   <option disabled hidden value="0">Choose Project Type</option>

@@ -9,8 +9,8 @@ const ProjectListItem = ({project}) => {
         <td>{project.id}</td>
         <td>{project.projectName}</td>
         <td>{project.description}</td>
-        <td>{project.startDate}</td>
-        <td>{project.endDate}</td>
+        <td>{new Date(project.startDate).toLocaleDateString()}</td>
+        <td>{project.endDate ? new Date(project.endDate).toLocaleDateString() : "Ongoing"}</td>
         <td>{project.status.statusName}</td>
         <td>{project.projectManager.employee.displayName}</td>
     </tr>
