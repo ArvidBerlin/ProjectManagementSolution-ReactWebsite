@@ -1,6 +1,5 @@
 import React from 'react'
 import SectionHeader from '../components/elements/SectionHeader'
-import ProjectDetails from '../components/sections/ProjectDetails'
 import CreateProjectForm from '../components/elements/CreateProjectForm'
 
 const CreateProject = () => {

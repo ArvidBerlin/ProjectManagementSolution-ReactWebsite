@@ -86,6 +86,10 @@ const CreateProjectForm = () => {
         console.log(res)
     }
 
+    const handleAbort = () => {
+        navigate('/projects'); 
+    }
+
     useEffect(() => {
         getStatuses()
     },[] )
@@ -107,8 +111,8 @@ const CreateProjectForm = () => {
     },[] )
 
   return (
-    <div className='container'>
-        <form onSubmit={handleSubmit}>
+    <div className='create-update-container'>
+        <form className="create-update-form" onSubmit={handleSubmit}>
 
             <div className='form-group'>
                 <label htmlFor="projectName">Project Name: </label>
@@ -190,7 +194,9 @@ const CreateProjectForm = () => {
                 </select>
             </div>
 
-            <button type='submit' id='create-button' className='btn btn-gray'>Create Project</button>
+            <button type='submit' className='btn btn-yellow'>Create Project</button>
+        
+            <button type="button" onClick={handleAbort} className="btn btn-gray">Abort</button>
 
         </form>
     </div>
