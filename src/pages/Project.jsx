@@ -36,7 +36,9 @@ const Project = () => {
                         <p><strong>Project Type:</strong> {project.projectType?.typeName || "No type specified"}</p>
                     </div>
                     
-                <Link to='/projects/update' className='btn btn-yellow update-btn'>Update Project</Link>
+                    <Link to={`/projects/update/${project.id}`} className='btn btn-yellow update-btn'>
+                        Update Project
+                    </Link>
             </div>
         </div>
     </main>
